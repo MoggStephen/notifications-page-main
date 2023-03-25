@@ -13,6 +13,7 @@ body .page-container {
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 21.875rem;
+  max-width: 42.188rem;
   padding: 0.125rem;
 }
 body .page-container .notification-header {
@@ -35,4 +36,54 @@ body .page-container .notification-header .mark-all-as-read {
   text-decoration: none;
   color: hsl(219, 12%, 42%);
   margin-left: auto;
+}
+body .page-container .notifications-container .notification-container {
+  display: flex;
+  padding: 1rem;
+  margin: 0.75rem 0;
+}
+body .page-container .notifications-container .notification-container .avatar {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+}
+body .page-container .notifications-container .notification-container .content-container {
+  font-size: 0.875rem;
+  color: hsl(219, 12%, 42%);
+}
+body .page-container .notifications-container .notification-container .content-container .event-text-container .name {
+  font-weight: 800;
+  color: hsl(224, 21%, 14%);
+}
+body .page-container .notifications-container .notification-container .content-container .event-text-container .post {
+  font-weight: 800;
+  color: hsl(219, 12%, 42%);
+}
+body .page-container .notifications-container .notification-container .content-container .event-text-container .group {
+  font-weight: 800;
+  color: hsl(219, 85%, 26%);
+}
+body .page-container .notifications-container .notification-container .content-container .event-text-container .read-icon {
+  height: 0.65rem;
+  width: 0.65rem;
+  background-color: hsl(1, 90%, 64%);
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 0 0.2rem 0.4rem;
+  vertical-align: bottom;
+}
+body .page-container .notifications-container .notification-container .content-container .time {
+  color: hsl(219, 14%, 63%);
+}
+body .page-container .notifications-container .notification-container .content-container .message {
+  border: 1px solid hsla(219, 12%, 42%, 0.2);
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+}
+body .page-container .notifications-container .unread {
+  background: hsl(210, 60%, 98%);
+}
+body .page-container .notifications-container .commented-picture {
+  width: 3rem;
+  height: auto;
 }/*# sourceMappingURL=index.css.map */

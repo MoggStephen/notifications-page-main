@@ -18,7 +18,7 @@ $darkGrayishBlue: hsl(219, 12%, 42%);
 $veryDarkBlue: hsl(224, 21%, 14%);
 
 // FONT SIZES
-$fontSizeP: 1rem;
+$fontSizeP: 0.875rem;
 $weightSmall: 500;
 $weightBig: 800;
 
@@ -38,6 +38,7 @@ body{
         transform: translate(-50%,-50%);
 
         min-width: $mobileMaxWidth;
+        max-width: $desktopMaxWidth;
         padding: 0.125rem;
         
         .notification-header{
@@ -60,6 +61,65 @@ body{
                 color: $darkGrayishBlue;
                 margin-left: auto;
             }
+        }
+
+        .notifications-container{
+            .notification-container{
+                display: flex;
+                padding: 1rem;
+                margin: 0.75rem 0;
+                .avatar{
+                    width: 3rem;
+                    height: 3rem;
+                    margin-right: 1rem;
+                }
+                .content-container{
+                    font-size: $fontSizeP;
+                        color: $darkGrayishBlue;
+                    .event-text-container{      
+                        .name{
+                            font-weight: $weightBig;
+                            color: $veryDarkBlue;
+                        }
+                        .event-text{
+
+                        }
+                        .post{
+                            font-weight: $weightBig;
+                            color: $darkGrayishBlue;
+                        }
+                        .group{
+                            font-weight: $weightBig;
+                            color: $blue;
+                        }
+                        .read-icon{
+                            height: 0.65rem;
+                            width: 0.65rem;
+                            background-color: $red;
+                            border-radius: 50%;
+                            display: inline-block;
+                            margin: 0 0 0.2rem 0.4rem;
+                            vertical-align: bottom;
+                        }
+                    }
+                    .time{
+                        color: $grayishBlue;
+                    }
+                    .message{
+                        border: 1px solid hsla(219, 12%, 42%,0.2);
+                        border-radius: 0.25rem;
+                        padding: 0.75rem;
+                    }
+                }
+
+            }
+            .unread{
+                background: $veryLightGrayishBlue;
+            }
+            .commented-picture{
+                width: 3rem;
+                height: auto;
+            } 
         }
     }
 }
