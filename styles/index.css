@@ -86,4 +86,5 @@ body .page-container .notifications-container .unread {
 body .page-container .notifications-container .commented-picture {
   width: 3rem;
   height: auto;
+  margin-left: auto;
 }/*# sourceMappingURL=index.css.map */
