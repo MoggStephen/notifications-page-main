@@ -29,7 +29,7 @@ body .page-wrapper .page-container .notification-header {
   align-items: center;
 }
 body .page-wrapper .page-container .notification-header h1 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin: 0 0.5rem 0 0;
 }
 body .page-wrapper .page-container .notification-header .notification-count {
@@ -63,7 +63,7 @@ body .page-wrapper .page-container .notifications-container .notification-contai
   margin-right: 1rem;
 }
 body .page-wrapper .page-container .notifications-container .notification-container .content-container {
-  font-size: 0.875rem;
+  font-size: 0.925rem;
   color: hsl(219, 12%, 42%);
 }
 body .page-wrapper .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-name {
@@ -112,12 +112,14 @@ body .page-wrapper .page-container .notifications-container .notification-contai
   color: hsl(219, 14%, 63%);
 }
 body .page-wrapper .page-container .notifications-container .notification-container .content-container .a-container-message {
+  font-size: 0.925rem;
   text-decoration: none;
   color: hsl(219, 12%, 42%);
   border: 1px solid hsla(219, 12%, 42%, 0.2);
   border-radius: 0.25rem;
   padding: 0.75rem;
   background: hsl(0, 0%, 100%);
+  text-align: left;
 }
 body .page-wrapper .page-container .notifications-container .notification-container .content-container .a-container-message:hover {
   background: hsl(205, 33%, 90%);
@@ -135,6 +137,12 @@ body .page-wrapper .page-container .notifications-container .a-container-img .co
   width: 3rem;
   height: auto;
   margin-left: auto;
+}
+body .page-wrapper .page-container .notifications-container .a-container-img:hover {
+  opacity: 0.5;
+}
+body .page-wrapper .page-container .notifications-container .a-container-img:focus {
+  opacity: 0.5;
 }
 
 @media (max-width: 670px) {

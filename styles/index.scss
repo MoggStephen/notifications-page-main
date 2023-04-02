@@ -17,8 +17,11 @@ $grayishBlue: hsl(219, 14%, 63%);
 $darkGrayishBlue: hsl(219, 12%, 42%);
 $veryDarkBlue: hsl(224, 21%, 14%);
 
-// FONT SIZES
-$fontSizeP: 0.875rem;
+// FONT SIZING
+$dFontSizeH1: 1.4rem;
+$dFontSizeNotifCount: 1rem;
+$dFontSizeP: 0.925rem;
+
 $weightSmall: 500;
 $weightBig: 800;
 
@@ -51,11 +54,11 @@ body{
                 justify-content: flex-start;
                 align-items: center;
                 h1{
-                    font-size: 1.5rem;
+                    font-size: $dFontSizeH1;
                     margin: 0 0.5rem 0 0;
                 }
                 .notification-count{
-                    font-size: 1rem;
+                    font-size: $dFontSizeNotifCount;
                     color: $white;
                     background: $blue;
                     padding: 0.1rem 0.6rem;
@@ -88,7 +91,7 @@ body{
                         margin-right: 1rem;
                     }
                     .content-container{
-                        font-size: $fontSizeP;
+                        font-size: $dFontSizeP;
                             color: $darkGrayishBlue;
                         .event-text-container{      
                             .a-container-name{
@@ -140,12 +143,14 @@ body{
                             color: $grayishBlue;
                         }
                         .a-container-message{
+                            font-size: $dFontSizeP;
                             text-decoration: none;
                             color: $darkGrayishBlue;
                             border: 1px solid hsla(219, 12%, 42%,0.2);
                             border-radius: 0.25rem;
                             padding: 0.75rem;
                             background: $white;
+                            text-align: left;
                             &:hover{
                                 background: $lightGrayishBlue2
                             }
@@ -166,6 +171,12 @@ body{
                         height: auto;
                         margin-left:auto;
                     } 
+                    &:hover{
+                        opacity: 0.5;
+                    }
+                    &:focus{
+                        opacity: 0.5;
+                    }
                 }
                 
             }
