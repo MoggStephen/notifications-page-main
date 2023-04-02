@@ -7,25 +7,32 @@
   font-family: "Plus Jakarta Sans";
 }
 
-body .page-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 21.875rem;
-  max-width: 42.188rem;
-  padding: 0.125rem;
+body {
+  background: hsl(210, 60%, 98%);
 }
-body .page-container .notification-header {
+body .page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .page-wrapper .page-container {
+  border-radius: 1rem;
+  background-color: hsl(0, 0%, 100%);
+  width: min(100%, 42.188rem);
+  max-width: max(21.875rem, 100%);
+  padding: 1.5rem;
+  margin: 3rem 0 3rem 0;
+}
+body .page-wrapper .page-container .notification-header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-body .page-container .notification-header h1 {
+body .page-wrapper .page-container .notification-header h1 {
   font-size: 1.5rem;
   margin: 0 0.5rem 0 0;
 }
-body .page-container .notification-header .notification-count {
+body .page-wrapper .page-container .notification-header .notification-count {
   font-size: 1rem;
   color: hsl(0, 0%, 100%);
   background: hsl(219, 85%, 26%);
@@ -33,65 +40,66 @@ body .page-container .notification-header .notification-count {
   border-radius: 0.3rem;
   font-weight: 800;
 }
-body .page-container .notification-header .mark-all-as-read {
+body .page-wrapper .page-container .notification-header .mark-all-as-read {
   text-decoration: none;
   color: hsl(219, 12%, 42%);
   margin-left: auto;
 }
-body .page-container .notification-header .mark-all-as-read:hover {
+body .page-wrapper .page-container .notification-header .mark-all-as-read:hover {
   color: hsl(219, 85%, 26%);
 }
-body .page-container .notification-header .mark-all-as-read:focus {
+body .page-wrapper .page-container .notification-header .mark-all-as-read:focus {
   color: hsl(219, 85%, 26%);
 }
-body .page-container .notifications-container .notification-container {
+body .page-wrapper .page-container .notifications-container .notification-container {
   display: flex;
   padding: 1rem;
   margin: 0.75rem 0;
+  border-radius: 0.5rem;
 }
-body .page-container .notifications-container .notification-container .avatar {
+body .page-wrapper .page-container .notifications-container .notification-container .avatar {
   width: 3rem;
   height: 3rem;
   margin-right: 1rem;
 }
-body .page-container .notifications-container .notification-container .content-container {
+body .page-wrapper .page-container .notifications-container .notification-container .content-container {
   font-size: 0.875rem;
   color: hsl(219, 12%, 42%);
 }
-body .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-name {
+body .page-wrapper .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-name {
   font-weight: 800;
   color: hsl(224, 21%, 14%);
   text-decoration: none;
 }
-body .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-name:hover {
+body .page-wrapper .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-name:hover {
   color: hsl(219, 85%, 26%);
 }
-body .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-name:focus {
+body .page-wrapper .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-name:focus {
   color: hsl(219, 85%, 26%);
 }
-body .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-post {
+body .page-wrapper .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-post {
   font-weight: 800;
   color: hsl(219, 12%, 42%);
   text-decoration: none;
 }
-body .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-post:hover {
+body .page-wrapper .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-post:hover {
   color: hsl(219, 85%, 26%);
 }
-body .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-post:focus {
+body .page-wrapper .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-post:focus {
   color: hsl(219, 85%, 26%);
 }
-body .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-group {
+body .page-wrapper .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-group {
   font-weight: 800;
   color: hsl(219, 85%, 26%);
   text-decoration: none;
 }
-body .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-group:hover {
+body .page-wrapper .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-group:hover {
   color: hsl(219, 14%, 63%);
 }
-body .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-group:focus {
+body .page-wrapper .page-container .notifications-container .notification-container .content-container .event-text-container .a-container-group:focus {
   color: hsl(219, 14%, 63%);
 }
-body .page-container .notifications-container .notification-container .content-container .event-text-container .read-icon {
+body .page-wrapper .page-container .notifications-container .notification-container .content-container .event-text-container .read-icon {
   height: 0.65rem;
   width: 0.65rem;
   background-color: hsl(1, 90%, 64%);
@@ -100,10 +108,10 @@ body .page-container .notifications-container .notification-container .content-c
   margin: 0 0 0.2rem 0.4rem;
   vertical-align: bottom;
 }
-body .page-container .notifications-container .notification-container .content-container .time {
+body .page-wrapper .page-container .notifications-container .notification-container .content-container .time {
   color: hsl(219, 14%, 63%);
 }
-body .page-container .notifications-container .notification-container .content-container .a-container-message {
+body .page-wrapper .page-container .notifications-container .notification-container .content-container .a-container-message {
   text-decoration: none;
   color: hsl(219, 12%, 42%);
   border: 1px solid hsla(219, 12%, 42%, 0.2);
@@ -111,17 +119,30 @@ body .page-container .notifications-container .notification-container .content-c
   padding: 0.75rem;
   background: hsl(0, 0%, 100%);
 }
-body .page-container .notifications-container .notification-container .content-container .a-container-message:hover {
+body .page-wrapper .page-container .notifications-container .notification-container .content-container .a-container-message:hover {
   background: hsl(205, 33%, 90%);
 }
-body .page-container .notifications-container .notification-container .content-container .a-container-message:focus {
+body .page-wrapper .page-container .notifications-container .notification-container .content-container .a-container-message:focus {
   background: hsl(205, 33%, 90%);
 }
-body .page-container .notifications-container .unread {
+body .page-wrapper .page-container .notifications-container .unread {
   background: hsl(210, 60%, 98%);
 }
-body .page-container .notifications-container .commented-picture {
+body .page-wrapper .page-container .notifications-container .a-container-img {
+  margin-left: auto;
+}
+body .page-wrapper .page-container .notifications-container .a-container-img .commented-picture {
   width: 3rem;
   height: auto;
   margin-left: auto;
+}
+
+@media (max-width: 670px) {
+  body {
+    background: hsl(0, 0%, 100%);
+  }
+  body .page-wrapper .page-container {
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+  }
 }/*# sourceMappingURL=index.css.map */

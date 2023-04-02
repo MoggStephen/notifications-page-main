@@ -31,133 +31,156 @@ $weightBig: 800;
 }
 
 body{
-    .page-container{
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+    background: $veryLightGrayishBlue;
+    .page-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        min-width: $mobileMaxWidth;
-        max-width: $desktopMaxWidth;
-        padding: 0.125rem;
-        
-        .notification-header{
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            h1{
-                font-size: 1.5rem;
-                margin: 0 0.5rem 0 0;
-            }
-            .notification-count{
-                font-size: 1rem;
-                color: $white;
-                background: $blue;
-                padding: 0.1rem 0.6rem;
-                border-radius: 0.3rem;
-                font-weight: $weightBig;
-            }
-            .mark-all-as-read{
-                text-decoration: none;
-                color: $darkGrayishBlue;
-                margin-left: auto;
-                &:hover{
-                    color: $blue;
+        .page-container{
+            border-radius: 1rem;
+            background-color: $white;
+
+            width: min(100%, $desktopMaxWidth) ;
+            max-width: max($mobileMaxWidth, 100%);
+            padding: 1.5rem;
+            margin: 3rem 0 3rem 0;
+            
+            .notification-header{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                h1{
+                    font-size: 1.5rem;
+                    margin: 0 0.5rem 0 0;
                 }
-                &:focus{
-                    color: $blue;
+                .notification-count{
+                    font-size: 1rem;
+                    color: $white;
+                    background: $blue;
+                    padding: 0.1rem 0.6rem;
+                    border-radius: 0.3rem;
+                    font-weight: $weightBig;
+                }
+                .mark-all-as-read{
+                    text-decoration: none;
+                    color: $darkGrayishBlue;
+                    margin-left: auto;
+                    &:hover{
+                        color: $blue;
+                    }
+                    &:focus{
+                        color: $blue;
+                    }
+                    
+                }
+            }
+
+            .notifications-container{
+                .notification-container{
+                    display: flex;
+                    padding: 1rem;
+                    margin: 0.75rem 0;
+                    border-radius: 0.5rem;
+                    .avatar{
+                        width: 3rem;
+                        height: 3rem;
+                        margin-right: 1rem;
+                    }
+                    .content-container{
+                        font-size: $fontSizeP;
+                            color: $darkGrayishBlue;
+                        .event-text-container{      
+                            .a-container-name{
+                                font-weight: $weightBig;
+                                color: $veryDarkBlue;
+                                text-decoration: none;
+                                &:hover{
+                                    color: $blue;
+                                }
+                                &:focus{
+                                    color: $blue;
+                                }
+                            }
+                            .a-container-post{
+                                font-weight: $weightBig;
+                                color: $darkGrayishBlue;
+                                text-decoration: none;
+
+                                &:hover{
+                                    color: $blue;
+                                }
+                                &:focus{
+                                    color: $blue;
+                                }
+                            }
+                            .a-container-group{
+                                font-weight: $weightBig;
+                                color: $blue;
+                                text-decoration: none;
+
+                                &:hover{
+                                    color: $grayishBlue;
+                                }
+                                &:focus{
+                                    color: $grayishBlue;
+                                }
+                            }                    
+                            .read-icon{
+                                height: 0.65rem;
+                                width: 0.65rem;
+                                background-color: $red;
+                                border-radius: 50%;
+                                display: inline-block;
+                                margin: 0 0 0.2rem 0.4rem;
+                                vertical-align: bottom;
+                            }
+                        }
+                        .time{
+                            color: $grayishBlue;
+                        }
+                        .a-container-message{
+                            text-decoration: none;
+                            color: $darkGrayishBlue;
+                            border: 1px solid hsla(219, 12%, 42%,0.2);
+                            border-radius: 0.25rem;
+                            padding: 0.75rem;
+                            background: $white;
+                            &:hover{
+                                background: $lightGrayishBlue2
+                            }
+                            &:focus{
+                                background: $lightGrayishBlue2
+                            }
+                        }
+                    }
+
+                }
+                .unread{
+                    background: $veryLightGrayishBlue;
+                }
+                .a-container-img{
+                    margin-left: auto;
+                    .commented-picture{
+                        width: 3rem;
+                        height: auto;
+                        margin-left:auto;
+                    } 
                 }
                 
             }
         }
-
-        .notifications-container{
-            .notification-container{
-                display: flex;
-                padding: 1rem;
-                margin: 0.75rem 0;
-                .avatar{
-                    width: 3rem;
-                    height: 3rem;
-                    margin-right: 1rem;
-                }
-                .content-container{
-                    font-size: $fontSizeP;
-                        color: $darkGrayishBlue;
-                    .event-text-container{      
-                        .a-container-name{
-                            font-weight: $weightBig;
-                            color: $veryDarkBlue;
-                            text-decoration: none;
-                            &:hover{
-                                color: $blue;
-                            }
-                            &:focus{
-                                color: $blue;
-                            }
-                        }
-                        .a-container-post{
-                            font-weight: $weightBig;
-                            color: $darkGrayishBlue;
-                            text-decoration: none;
-
-                            &:hover{
-                                color: $blue;
-                            }
-                            &:focus{
-                                color: $blue;
-                            }
-                        }
-                        .a-container-group{
-                            font-weight: $weightBig;
-                            color: $blue;
-                            text-decoration: none;
-
-                            &:hover{
-                                color: $grayishBlue;
-                            }
-                            &:focus{
-                                color: $grayishBlue;
-                            }
-                        }                    
-                        .read-icon{
-                            height: 0.65rem;
-                            width: 0.65rem;
-                            background-color: $red;
-                            border-radius: 50%;
-                            display: inline-block;
-                            margin: 0 0 0.2rem 0.4rem;
-                            vertical-align: bottom;
-                        }
-                    }
-                    .time{
-                        color: $grayishBlue;
-                    }
-                    .a-container-message{
-                        text-decoration: none;
-                        color: $darkGrayishBlue;
-                        border: 1px solid hsla(219, 12%, 42%,0.2);
-                        border-radius: 0.25rem;
-                        padding: 0.75rem;
-                        background: $white;
-                        &:hover{
-                            background: $lightGrayishBlue2
-                        }
-                        &:focus{
-                            background: $lightGrayishBlue2
-                        }
-                    }
-                }
-
+    }
+}
+@media (max-width: 670px) {
+    body{
+        background: $white;
+        .page-wrapper{
+            
+            .page-container{
+                padding: 0.5rem;
+                margin: 0.5rem 0;
             }
-            .unread{
-                background: $veryLightGrayishBlue;
-            }
-            .commented-picture{
-                width: 3rem;
-                height: auto;
-                margin-left:auto;
-            } 
         }
     }
 }

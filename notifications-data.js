@@ -1,7 +1,8 @@
 let notificationsData = {
     "notificationsCount": 3,
     "notifications": [
-        {
+        {   
+            "id": 0,
             "name": "Mark Webber",
             "avatar": "/avatar-mark-webber.webp",
             "event": {
@@ -11,7 +12,8 @@ let notificationsData = {
             "timeSinceEventOccured": "1 mins",
             "read": false
         },
-        {
+        {   
+            "id": 1,
             "name": "Angela Gray",
             "avatar": "/avatar-angela-gray.webp",
             "event": {
@@ -21,6 +23,7 @@ let notificationsData = {
             "read": false
         },
         {
+            "id": 2,
             "name": "Jacob Thompson",
             "avatar": "/avatar-jacob-thompson.webp",
             "event": {
@@ -31,6 +34,7 @@ let notificationsData = {
             "read": false
         },
         {
+            "id": 3,
             "name": "Rizky Hasanuddin",
             "avatar": "/avatar-rizky-hasanuddin.webp",
             "event": {
@@ -41,6 +45,7 @@ let notificationsData = {
             "read": true
         },
         {
+            "id": 4,
             "name": "Kimberly Smith",
             "avatar": "/avatar-kimberly-smith.webp",
             "event": {
@@ -51,6 +56,7 @@ let notificationsData = {
             "read": true
         },
         {
+            "id": 5,
             "name": "Nathan Peterson",
             "avatar": "/avatar-nathan-peterson.webp",
             "event": {
@@ -61,6 +67,7 @@ let notificationsData = {
             "read": true
         },
         {
+            "id": 6,
             "name": "Anna Kim",
             "avatar": "/avatar-anna-kim.webp",
             "event": {

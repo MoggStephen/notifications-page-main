@@ -8,25 +8,28 @@
   <link rel="stylesheet" href="./styles/index.css">
   <script src="./notifications-data.js" defer></script>
   <script src="./index.js" defer></script>
+  <script src="markRead.js" defer></script>
 
   <title>Frontend Mentor | Notifications page</title>
 </head>
 <body>
-  <div class="page-container">
+  <div class="page-wrapper">
+    <div class="page-container">
 
-    <!-- NOTIFICATIONS HEADER -->
-    <header class="notification-header">
-      <h1>Notifications</h1>
-      <div class="notification-count">
+      <!-- NOTIFICATIONS HEADER -->
+      <header class="notification-header">
+        <h1>Notifications</h1>
+        <div class="notification-count">
+          <!-- POPULATED WITH JAVASCRIPT -->
+        </div>
+        <a href="#/" class="mark-all-as-read">Mark all as read</a>
+      </header>
+
+      <!-- NOTIFICATIONS CONTAINER -->
+      <main class="notifications-container">
         <!-- POPULATED WITH JAVASCRIPT -->
-      </div>
-      <a href="#/" class="mark-all-as-read">Mark all as read</a>
-    </header>
-
-    <!-- NOTIFICATIONS CONTAINER -->
-    <main class="notifications-container">
-      <!-- POPULATED WITH JAVASCRIPT -->
-    </main>
+      </main>
+    </div>
   </div>
 </body>
 </html>

@@ -1,5 +1,7 @@
-const notifData = JSON.parse(JSON.stringify(notificationsData));
-console.log(notifData)
+if(sessionStorage.getItem("notifData") === null){
+    sessionStorage.setItem("notifData",JSON.stringify(notificationsData));
+}
+const notifData = JSON.parse(sessionStorage.getItem("notifData"));
 
 const notifCountElement = document.querySelector(".notification-count");
 notifCountElement.textContent = notifData.notificationsCount;
@@ -18,8 +20,8 @@ notifData.notifications.forEach(notif =>{
     notifContainer.appendChild(contentContainer);
 
     if(notif.event.event === "commented your picture"){
-        const imgElement = createImgElement(notif.event.picture);
-            notifContainer.appendChild(imgElement);
+        const imgElement = createImgElement(notif.event.picture,notif.id);
+        notifContainer.appendChild(imgElement);
     }          
     else if(notif.read === false){
         notifContainer.classList.add("unread");
@@ -51,7 +53,7 @@ function createContentContainer(notif){
     contentContainer.appendChild(timeSinceEventOccured);
 
     if (notif.event.event === "private message") {
-        const message = createMessage(notif.event.message);
+        const message = createMessage(notif.event.message,notif.id);
         contentContainer.appendChild(message);
     }
 
@@ -65,7 +67,7 @@ function createEventText(notif){
     const eventTextContainer = document.createElement("div");
     eventTextContainer.classList.add("event-text-container");
 
-    const nameSpan = createNameSpan(notif.name);
+    const nameSpan = createNameSpan(notif.name, notif.id);
     eventTextContainer.appendChild(nameSpan);
 
     let eventSpan;
@@ -77,7 +79,7 @@ function createEventText(notif){
             eventSpan.textContent = " reacted to your recent post ";
             eventTextContainer.appendChild(eventSpan);
         
-            postOrGroup = createPostSpan();
+            postOrGroup = createPostSpan(notif.id);
             postOrGroup.textContent = notif.event.post;
             eventTextContainer.appendChild(postOrGroup)
 
@@ -92,7 +94,7 @@ function createEventText(notif){
             eventSpan.textContent = " has joined your group ";
             eventTextContainer.appendChild(eventSpan);
 
-            postOrGroup = createGroupSpan();
+            postOrGroup = createGroupSpan(notif.id);
             postOrGroup.textContent = notif.event.group;
             eventTextContainer.appendChild(postOrGroup)
             break;
@@ -101,7 +103,7 @@ function createEventText(notif){
             eventSpan.textContent = " left the group ";
             eventTextContainer.appendChild(eventSpan);
             
-            postOrGroup = createGroupSpan();
+            postOrGroup = createGroupSpan(notif.id);
             postOrGroup.textContent = notif.event.group;
             eventTextContainer.appendChild(postOrGroup)
             break;
@@ -125,10 +127,11 @@ function createEventText(notif){
     }
     return eventTextContainer;
 }
-function createNameSpan(name){
+function createNameSpan(name,id){
     const aContainerName = document.createElement("a");
     aContainerName.classList.add("a-container-name")
     aContainerName.href = "#/";
+    aContainerName.setAttribute("data-id", id)
 
     const nameSpan = document.createElement("span");
     nameSpan.classList.add("name");
@@ -143,10 +146,11 @@ function createEventSpan(){
 
     return eventSpan;
 }
-function createPostSpan(){
+function createPostSpan(id){
     const aContainer = document.createElement("a");
     aContainer.href = "#/";
     aContainer.classList.add("a-container-post");
+    aContainer.setAttribute("data-id", id)
 
     const postSpan = document.createElement("span");
     postSpan.classList.add("post");
@@ -154,11 +158,12 @@ function createPostSpan(){
 
     return aContainer;
 }
-function createGroupSpan(){
+function createGroupSpan(id){
 
     const aContainer = document.createElement("a");
     aContainer.href = "#/";
     aContainer.classList.add("a-container-group");
+    aContainer.setAttribute("data-id", id)
 
     const groupSpan = document.createElement("span");
     groupSpan.classList.add("group");
@@ -220,9 +225,10 @@ function createTimeSinceEventOccured(notif){
 
     return time;
 }
-function createMessage(message){
+function createMessage(message,id){
     const aContainerMessage = document.createElement("button");
     aContainerMessage.classList.add("a-container-message");
+    aContainerMessage.setAttribute("data-id",id)
 
     const messageText = document.createElement("div");
     messageText.classList.add("message");
@@ -231,10 +237,12 @@ function createMessage(message){
     aContainerMessage.appendChild(messageText);
     return aContainerMessage;
 }
-function createImgElement(url){
+function createImgElement(url,id){
     const aContainer = document.createElement("a");
-    aContainer.classList.add("a-container");
+    aContainer.classList.add("a-container-img");
+    aContainer.classList.add("image-anchor");
     aContainer.href = "#/";
+    aContainer.setAttribute("data-id",id)
 
     const imgElement = document.createElement("img");
     imgElement.src = "./assets/images" + url;
