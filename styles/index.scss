@@ -47,6 +47,7 @@ body{
             align-items: center;
             h1{
                 font-size: 1.5rem;
+                margin: 0 0.5rem 0 0;
             }
             .notification-count{
                 font-size: 1rem;
@@ -60,6 +61,13 @@ body{
                 text-decoration: none;
                 color: $darkGrayishBlue;
                 margin-left: auto;
+                &:hover{
+                    color: $blue;
+                }
+                &:focus{
+                    color: $blue;
+                }
+                
             }
         }
 
@@ -77,21 +85,41 @@ body{
                     font-size: $fontSizeP;
                         color: $darkGrayishBlue;
                     .event-text-container{      
-                        .name{
+                        .a-container-name{
                             font-weight: $weightBig;
                             color: $veryDarkBlue;
+                            text-decoration: none;
+                            &:hover{
+                                color: $blue;
+                            }
+                            &:focus{
+                                color: $blue;
+                            }
                         }
-                        .event-text{
-
-                        }
-                        .post{
+                        .a-container-post{
                             font-weight: $weightBig;
                             color: $darkGrayishBlue;
+                            text-decoration: none;
+
+                            &:hover{
+                                color: $blue;
+                            }
+                            &:focus{
+                                color: $blue;
+                            }
                         }
-                        .group{
+                        .a-container-group{
                             font-weight: $weightBig;
                             color: $blue;
-                        }
+                            text-decoration: none;
+
+                            &:hover{
+                                color: $grayishBlue;
+                            }
+                            &:focus{
+                                color: $grayishBlue;
+                            }
+                        }                    
                         .read-icon{
                             height: 0.65rem;
                             width: 0.65rem;
@@ -105,10 +133,19 @@ body{
                     .time{
                         color: $grayishBlue;
                     }
-                    .message{
+                    .a-container-message{
+                        text-decoration: none;
+                        color: $darkGrayishBlue;
                         border: 1px solid hsla(219, 12%, 42%,0.2);
                         border-radius: 0.25rem;
                         padding: 0.75rem;
+                        background: $white;
+                        &:hover{
+                            background: $lightGrayishBlue2
+                        }
+                        &:focus{
+                            background: $lightGrayishBlue2
+                        }
                     }
                 }
 

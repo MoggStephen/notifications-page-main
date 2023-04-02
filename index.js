@@ -126,10 +126,16 @@ function createEventText(notif){
     return eventTextContainer;
 }
 function createNameSpan(name){
+    const aContainerName = document.createElement("a");
+    aContainerName.classList.add("a-container-name")
+    aContainerName.href = "#/";
+
     const nameSpan = document.createElement("span");
     nameSpan.classList.add("name");
     nameSpan.textContent = name;
-    return nameSpan;
+
+    aContainerName.appendChild(nameSpan);
+    return aContainerName;
 }
 function createEventSpan(){
     const eventSpan = document.createElement("span");
@@ -138,16 +144,27 @@ function createEventSpan(){
     return eventSpan;
 }
 function createPostSpan(){
+    const aContainer = document.createElement("a");
+    aContainer.href = "#/";
+    aContainer.classList.add("a-container-post");
+
     const postSpan = document.createElement("span");
     postSpan.classList.add("post");
+    aContainer.appendChild(postSpan)
 
-    return postSpan;
+    return aContainer;
 }
 function createGroupSpan(){
+
+    const aContainer = document.createElement("a");
+    aContainer.href = "#/";
+    aContainer.classList.add("a-container-group");
+
     const groupSpan = document.createElement("span");
     groupSpan.classList.add("group");
+    aContainer.appendChild(groupSpan);
 
-    return groupSpan;
+    return aContainer;
 }
 function createReadIcon(){
     const readIcon = document.createElement("span");
@@ -204,15 +221,25 @@ function createTimeSinceEventOccured(notif){
     return time;
 }
 function createMessage(message){
+    const aContainerMessage = document.createElement("button");
+    aContainerMessage.classList.add("a-container-message");
+
     const messageText = document.createElement("div");
     messageText.classList.add("message");
     messageText.textContent = message;
-    return messageText;
+
+    aContainerMessage.appendChild(messageText);
+    return aContainerMessage;
 }
 function createImgElement(url){
+    const aContainer = document.createElement("a");
+    aContainer.classList.add("a-container");
+    aContainer.href = "#/";
+
     const imgElement = document.createElement("img");
     imgElement.src = "./assets/images" + url;
     imgElement.classList.add("commented-picture");
-    console.log(url)
-    return imgElement;
+
+    aContainer.appendChild(imgElement);
+    return aContainer;
 }
